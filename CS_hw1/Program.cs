@@ -94,27 +94,37 @@ namespace hw1
 					Console.WriteLine("error: введено не шестизначное число");
 				else 
 				{
-					Console.WriteLine("введите позицию первой цыфры из пары");
+					Console.WriteLine("введите позицию первой цыфры из пары (1-6)");
 					Int32 start = Convert.ToInt32(Console.ReadLine());
 					if (start < 1 || start > 6) 
 					{ 
-						Console.WriteLine("error: введено не шестизначное число");
+						Console.WriteLine("error: введено число вне диапазона (1-6)");
 						return ;
 					}
-					Console.WriteLine("введите позицию второй цыфры из пары");
+					Console.WriteLine("введите позицию второй цыфры из пары (1-6)");
 					Int32 stop = Convert.ToInt32(Console.ReadLine());
 					if (stop < 1 || stop > 6)
 					{
-						Console.WriteLine("error: введено не шестизначное число");
+						Console.WriteLine("error: введено число вне диапазона (1-6)");
 						return;
 					}
-					if (stop == stop )
+					if (start == stop )
 					{
-						Console.WriteLine("error: введены одинаковые значения позиций);
+						Console.WriteLine("error: введены одинаковые позиции цыфр");
 						return;
 					}
 
-					Console.WriteLine(sNumber);
+					char st = sNumber[start-1];
+					char sp = sNumber[stop-1];
+					string result = "";
+                    for (int i = 0; i < 6; i++)
+                    {
+						if(i == start-1) result += sp;
+						else if (i == stop-1) result += st;
+						else result += sNumber[i];
+					}
+					
+					Console.WriteLine(result);
 				}
 			}
 
@@ -124,7 +134,7 @@ namespace hw1
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("1 - задача 1\n2 - задача 2\n3 - задача 3");
+			Console.WriteLine("1 - задача 1\n2 - задача 2\n3 - задача 3\n4 - задача 4");
 			Int32 key = Convert.ToInt32(Console.ReadLine());
 			switch (key)
 			{
@@ -139,6 +149,10 @@ namespace hw1
 				case 3:
 					Task3 task3 = new Task3();
 					task3.StartTask3();
+					break;
+				case 4:
+					Task4 task4 = new Task4();
+					task4.StartTask4();
 					break;
 				default:
 				break;
