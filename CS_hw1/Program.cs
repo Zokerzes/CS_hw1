@@ -123,11 +123,30 @@ namespace hw1
 						else if (i == stop-1) result += st;
 						else result += sNumber[i];
 					}
-					
 					Console.WriteLine(result);
 				}
 			}
 
+		}
+	}
+	class Task5
+	{
+		public void StartTask5()
+							/*Пользователь вводит с клавиатуры дату.
+							Приложение должно отобразить название сезона и дня недели.
+							Например, если введено 22.12.2021, приложение должно
+							отобразить Winter Wednesday.*/
+		{
+			{
+				Console.WriteLine("Введите дату в формате дд.мм.гггг");
+				DateTime date = Convert.ToDateTime(Console.ReadLine());
+
+				Console.WriteLine("день недели {1}.", date.DayOfWeek);
+
+
+
+				Console.WriteLine();
+			}
 		}
 	}
 	class HomeWork
