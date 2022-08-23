@@ -74,6 +74,52 @@ namespace hw1
 
 		}
 	}
+	class Task4
+	{
+		public void StartTask4()
+										/*Пользователь вводит шестизначное число. После чего
+										пользователь вводит номера разрядов для обмена цифр.
+										Например, если пользователь ввёл один и шесть — это
+										значит, что надо обменять местами первую и шестую
+										цифры.
+										Число 723895 должно превратиться в 523897.
+										Если пользователь ввел не шестизначное число требуется
+										вывести сообщение об ошибке.*/
+		{
+			{
+				Console.WriteLine("Введите шестизначное число");
+				string? sNumber = Console.ReadLine();
+				if (sNumber == "") Console.WriteLine("error: число не введено");
+				else if (Convert.ToDouble(sNumber) < 100000 || Convert.ToDouble(sNumber) > 999999)
+					Console.WriteLine("error: введено не шестизначное число");
+				else 
+				{
+					Console.WriteLine("введите позицию первой цыфры из пары");
+					Int32 start = Convert.ToInt32(Console.ReadLine());
+					if (start < 1 || start > 6) 
+					{ 
+						Console.WriteLine("error: введено не шестизначное число");
+						return ;
+					}
+					Console.WriteLine("введите позицию второй цыфры из пары");
+					Int32 stop = Convert.ToInt32(Console.ReadLine());
+					if (stop < 1 || stop > 6)
+					{
+						Console.WriteLine("error: введено не шестизначное число");
+						return;
+					}
+					if (stop == stop )
+					{
+						Console.WriteLine("error: введены одинаковые значения позиций);
+						return;
+					}
+
+					Console.WriteLine(sNumber);
+				}
+			}
+
+		}
+	}
 	class HomeWork
 	{
 		public static void Main(string[] args)
