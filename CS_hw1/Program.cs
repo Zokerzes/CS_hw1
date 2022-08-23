@@ -153,7 +153,7 @@ namespace hw1
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("1 - задача 1\n2 - задача 2\n3 - задача 3\n4 - задача 4");
+			Console.WriteLine("1 - задача 1\n2 - задача 2\n3 - задача 3\n4 - задача 4\n5 - задача 5");
 			Int32 key = Convert.ToInt32(Console.ReadLine());
 			switch (key)
 			{
@@ -172,6 +172,10 @@ namespace hw1
 				case 4:
 					Task4 task4 = new Task4();
 					task4.StartTask4();
+					break;
+				case 5:
+					Task5 task5 = new Task5();
+					task5.StartTask5();
 					break;
 				default:
 				break;
