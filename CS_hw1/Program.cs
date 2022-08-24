@@ -138,22 +138,73 @@ namespace hw1
 							отобразить Winter Wednesday.*/
 		{
 			{
-				Console.WriteLine("Введите дату в формате дд.мм.гггг");
-				DateTime date = Convert.ToDateTime(Console.ReadLine());
+				Console.Write("Введите день: ");
+				Int32 dd = Convert.ToInt32(Console.ReadLine());
+				Console.Write("Введите месяц: ");
+				Int32 mm = Convert.ToInt32(Console.ReadLine());
+				Console.Write("Введите год: ");
+				Int32 yyyy = Convert.ToInt32(Console.ReadLine());
 
-				Console.WriteLine("день недели {1}.", date.DayOfWeek);
+				if (mm == 12 || mm == 01 || mm == 02) Console.Write("Winter ");
+				if (mm == 03 || mm == 04 || mm == 05) Console.Write("Spring ");
+				if (mm == 06 || mm == 07 || mm == 08) Console.Write("Summer ");
+				if (mm == 09 || mm == 10 || mm == 11) Console.Write("Autumn ");
+				DateTime date1 = new DateTime(yyyy, mm, dd);
+				Console.WriteLine(date1.DayOfWeek);
+
+				// проблема как достать елемент из строки и перевести его в число
+
+				Console.ReadKey(true);
 
 
-
-				Console.WriteLine();
 			}
 		}
+	}
+	class Task6
+	{
+		public void StartTask6()
+		{
+
+			Console.WriteLine("Введите показания температуры");
+			double termo = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine("1 - градусы цельсия в градусы фаренгейта\n" +
+								"2 - градусы фаренгейта в градусы цельсия");
+			int choose = Convert.ToInt32(Console.ReadLine());
+			double cel = termo * 9 / 5 + 32;
+			double far = (termo - 32) * 5 / 9;
+
+			if (choose == 1) Console.WriteLine(termo + " градуса(ов) цельсия = " + cel + " градуса(ов) фаренгейта");
+			if (choose == 2) Console.WriteLine(termo + " градуса(ов) фаренгейта = " + far + " градуса(ов) цельсия ");
+			Console.ReadKey();
+		}
+	}
+	class Task7
+	{
+		public void StartTask7()
+		{
+			Console.WriteLine("Введите 2 числа");
+			double start = Convert.ToDouble(Console.ReadLine());
+			double finis = Convert.ToDouble(Console.ReadLine());
+			if (finis < start)
+			{
+				var temp = start;
+				start = finis;
+				finis = temp;
+			}
+			for (int i = Convert.ToInt32(start); i <= Convert.ToInt32(finis); i++)
+			{
+				if (i % 2 == 0) Console.Write(i + " ");
+			}
+			Console.ReadKey(true);
+		}
+
 	}
 	class HomeWork
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("1 - задача 1\n2 - задача 2\n3 - задача 3\n4 - задача 4\n5 - задача 5");
+			Console.WriteLine("1 - задача 1\n2 - задача 2\n3 - задача 3\n" +
+                "4 - задача 4\n5 - задача 5\n6 - задача 6\n7 - задача 7");
 			Int32 key = Convert.ToInt32(Console.ReadLine());
 			switch (key)
 			{
@@ -177,6 +228,15 @@ namespace hw1
 					Task5 task5 = new Task5();
 					task5.StartTask5();
 					break;
+				case 6:
+                    Task6 task6 = new Task6();
+                    task6.StartTask6();
+                    break;
+				case 7:
+                    Task7 task7 = new Task7();
+                    task7.StartTask7();
+                    break;
+				
 				default:
 				break;
 
