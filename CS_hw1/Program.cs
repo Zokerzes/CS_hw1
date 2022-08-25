@@ -138,19 +138,16 @@ namespace hw1
 							отобразить Winter Wednesday.*/
 		{
 			{
-				Console.Write("Введите день: ");
-				Int32 dd = Convert.ToInt32(Console.ReadLine());
-				Console.Write("Введите месяц: ");
-				Int32 mm = Convert.ToInt32(Console.ReadLine());
-				Console.Write("Введите год: ");
-				Int32 yyyy = Convert.ToInt32(Console.ReadLine());
+				Console.Write("Введите ддату дд.мм.ггггг ");
+				DateTime aDate = DateTime.Parse(Console.ReadLine());
+				int mm = aDate.Month;
 
 				if (mm == 12 || mm == 01 || mm == 02) Console.Write("Winter ");
 				if (mm == 03 || mm == 04 || mm == 05) Console.Write("Spring ");
 				if (mm == 06 || mm == 07 || mm == 08) Console.Write("Summer ");
 				if (mm == 09 || mm == 10 || mm == 11) Console.Write("Autumn ");
-				DateTime date1 = new DateTime(yyyy, mm, dd);
-				Console.WriteLine(date1.DayOfWeek);
+				
+				Console.WriteLine(aDate.DayOfWeek);
 
 				// проблема как достать елемент из строки и перевести его в число
 
